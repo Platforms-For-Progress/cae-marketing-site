@@ -262,16 +262,17 @@ const NAV_ITEMS = [
   },
   {
     label: "Our Solutions",
+    
     children: [
       {
         label: "ePortfolio Request Service",
         subLabel: "Request an ePortfolio using our services.",
-        href: "caeportfolio.com",
+        href: "https://caeportfolio.com",
       },
       {
         label: "Career Advancement Portfolio Education",
         subLabel: "Summer Learning Experience.",
-        href: "caeportfolio.com/resources/cape",
+        href: "https://caeportfolio.com/resources/cape",
       },
       {
         label: "Slack Community",
