@@ -12,7 +12,7 @@ export const metadata = {
   description: "Our solutions for addressing inequities in the hiring process",
 };
 
-export default function SolutionsLayou({
+export default function SolutionsLayout({
   children,
 }: {
   children: React.ReactNode;

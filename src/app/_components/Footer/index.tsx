@@ -74,7 +74,7 @@ export default function Footer() {
             <Box cursor="pointer">
               <Link href="/">
                 <Image
-                  src="/logo-line.png"
+                  src={useColorModeValue("/logo-black.svg", "/logo-white.svg")}
                   alt="logo"
                   width="200"
                   height="100"
@@ -91,17 +91,7 @@ export default function Footer() {
             <Link href={"/about"}>About us</Link>
 
             <Link href={"/contact"}>Contact us</Link>
-            {/* <Link href={'#'}>Pricing</Link>
-              <Link href={'#'}>Testimonials</Link> */}
           </Stack>
-          {/* <Stack align={'flex-start'}>
-              <ListHeader>Support</ListHeader>
-              <Link href={'#'}>Help Center</Link>
-              <Link href={'#'}>Terms of Service</Link>
-              <Link href={'#'}>Legal</Link>
-              <Link href={'#'}>Privacy Policy</Link>
-              <Link href={'#'}>Satus</Link>
-            </Stack> */}
           <Stack align={"flex-start"}>
             <ListHeader>Stay up to date</ListHeader>
             <Stack direction={"row"}>

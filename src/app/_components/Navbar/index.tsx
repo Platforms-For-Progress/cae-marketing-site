@@ -17,7 +17,7 @@ import {
   useDisclosure,
   Image as ChakraImage,
 } from "@chakra-ui/react";
-import { Image as NextImage } from "@chakra-ui/next-js";
+import Image from "next/image";
 import { Link } from "@chakra-ui/next-js";
 import {
   HamburgerIcon,
@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('gray.50', 'gray.900')}
+        bg={useColorModeValue("gray.50", "gray.900")}
         color={useColorModeValue("gray.600", "white")}
         // minH={"60px"}
         py={{ base: 2 }}
@@ -41,7 +41,7 @@ export default function Navbar() {
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
-        maxH={'10vh'}
+        maxH={"10vh"}
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -60,22 +60,22 @@ export default function Navbar() {
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Box cursor="pointer">
             <Link href="/">
-              {/* <NextImage
-                src="/logo-line.png"
+              <Image
+                src={useColorModeValue("/logo-black.svg", "/logo-white.svg")}
                 alt="logo"
                 width="120"
                 height="60"
                 style={{ objectFit: "contain" }}
                 // boxSize={{ base: "100px", md: "150px", lg: "200px" }}
-              /> */}
-              <ChakraImage
-                src="/logo-line.png"
+              />
+              {/* <ChakraImage
+                src="/logo-black.png"
                 alt="logo"
                 width="120"
                 height="60"
                 style={{ objectFit: "contain" }}
                 boxSize={{ base: "50px", md: "100px", lg: "150px" }}
-              />
+              /> */}
             </Link>
           </Box>
 
@@ -103,7 +103,6 @@ const DesktopNav = () => {
       spacing={4}
       justifyContent={"center"}
       alignItems={"center"}
-      
     >
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label} justifyContent={"center"}>

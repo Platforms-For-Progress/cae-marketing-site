@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
   useBreakpointValue,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import Image from "next/image";
@@ -19,7 +20,10 @@ export default function Home() {
       <Stack minH="100vh" direction={{ base: "column", md: "row" }}>
         <Flex p={8} flex={1} align={"center"} justify={"center"}>
           <Stack spacing={6} w={"full"} maxW={"lg"}>
-            <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+            <Heading
+              color={useColorModeValue("black", "white")}
+              fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+            >
               <Text as={"span"} position={"relative"}>
                 Empowering
               </Text>
@@ -61,7 +65,11 @@ export default function Home() {
               >
                 View our solutions
               </Link>
-              <Link href="/about" rounded={"full"}>
+              <Link
+                href="/about"
+                rounded={"full"}
+                color={useColorModeValue("black", "white")}
+              >
                 Learn more <span aria-hidden="true">→</span>
               </Link>
             </Stack>

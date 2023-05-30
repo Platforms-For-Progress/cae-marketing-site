@@ -50,28 +50,31 @@ const Card = ({ heading, description, icon, href }: any) => {
           <Heading size="md" color={"yellow.400"}>
             {heading}
           </Heading>
-          <Text mt={1} fontSize={"sm"}>
+          <Text
+            mt={1}
+            fontSize={"sm"}
+            color={useColorModeValue("black", "white")}
+          >
             {description}
           </Text>
         </Box>
-        { (href != "#") ? (
-          
-        <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-          Learn more
-        </Button>
-        ): (
+        {href != "#" ? (
           <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-          Coming Soon
-        </Button>
+            Learn more
+          </Button>
+        ) : (
+          <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
+            Coming Soon
+          </Button>
         )}
       </Stack>
     </Box>
   );
 };
 
-export default function gridListWith() {
+export default function Solutions() {
   return (
-    <Box p={4} h={"100vh"}>
+    <Box p={4}>
       <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
         <Heading
           color={"yellow.300"}
@@ -80,12 +83,18 @@ export default function gridListWith() {
         >
           Our Solutions
         </Heading>
-        <Text color={"gray.600"} fontSize={{ base: "sm", sm: "lg" }}>
+        <Text
+          color={useColorModeValue("gray.600", "white")}
+          fontSize={{ base: "sm", sm: "lg" }}
+        >
           CAE addresses inequities in the hiring process through innovative
           solutions that leverage modern technologies and community-building
           strategies.
         </Text>
-        <Text color={"gray.600"} fontSize={{ base: "sm", sm: "lg" }}>
+        <Text
+          color={useColorModeValue("gray.600", "white")}
+          fontSize={{ base: "sm", sm: "lg" }}
+        >
           Through these solutions, we provide career advancement resources to
           underrepresented students and professionals as well as foster
           relationships with parties interested in acquiring diverse talent.
@@ -116,13 +125,15 @@ export default function gridListWith() {
             description={
               "Slack community built up from underrepresented populations at UIUC and adjacent communities."
             }
-            href={"https://join.slack.com/t/slack-gkx8909/shared_invite/zt-1wb4et1xt-Ti4CW4_LjTHoJ6Fi6DGP5Q"}
+            href={
+              "https://join.slack.com/t/slack-gkx8909/shared_invite/zt-1wb4et1xt-Ti4CW4_LjTHoJ6Fi6DGP5Q"
+            }
           />
           <Card
             heading={"Professional Social Network"}
             icon={<Icon as={FcGraduationCap} w={10} h={10} />}
             description={
-              "Professional social networking web and mobile app for underrepresented persons. " 
+              "Professional social networking web and mobile app for underrepresented persons. "
             }
             href={"#"}
           />
