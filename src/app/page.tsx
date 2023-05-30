@@ -1,95 +1,84 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+  useBreakpointValue,
+} from "@chakra-ui/react";
+import Image from "next/image";
+import { Link } from "@chakra-ui/next-js";
+
+import heroImage from "../../public/images/hero.jpeg";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <Flex dir="column" justifyContent="space-between" alignItems="center">
+      <Stack minH="100vh" direction={{ base: "column", md: "row" }}>
+        <Flex p={8} flex={1} align={"center"} justify={"center"}>
+          <Stack spacing={6} w={"full"} maxW={"lg"}>
+            <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+              <Text
+                as={"span"}
+                position={"relative"}
+                // _after={{
+                //   content: "''",
+                //   width: "full",
+                //   height: useBreakpointValue({ base: "20%", md: "30%" }),
+                //   position: "absolute",
+                //   bottom: 1,
+                //   left: 0,
+                //   bg: "yellow.400",
+                //   zIndex: -1,
+                // }}
+              >
+                Empowering
+              </Text>
+              <Text
+                as="span"
+                bgGradient="linear(to-l, #e1cf28, #f6a818)"
+                bgClip="text"
+                fontWeight="extrabold"
+              >
+                {" "}
+                diversity
+              </Text>
+              <br />
+              <Text>in the workplace</Text>
+            </Heading>
+            <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
+              Career Advancement Exchange is revolutionizing the workforce and
+              reducing the inequities that exist within the hiring process.
+            </Text>
+            <Stack direction={{ base: "column", md: "row" }} spacing={4}>
+              <Link
+                href="/solutions"
+                rounded={"full"}
+                bg={"yellow.400"}
+                color={"white"}
+                _hover={{
+                  bg: "yellow.500",
+                }}
+              >
+                View our solutions
+              </Link>
+              <Link href="/contact" rounded={"full"}>
+                Contact Us
+              </Link>
+            </Stack>
+          </Stack>
+        </Flex>
+        <Flex flex={1}>
+          <Image
+            alt={"Login Image"}
+            style={{ objectFit: "cover" }}
+            src={heroImage}
+          />
+        </Flex>
+      </Stack>
+    </Flex>
+  );
 }
