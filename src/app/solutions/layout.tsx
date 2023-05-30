@@ -12,20 +12,15 @@ export const metadata = {
   description: "Our solutions for addressing inequities in the hiring process",
 };
 
-export default function RootLayout({
+export default function SolutionsLayou({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Providers>
-          <Navbar />
-          {children}
-          <Footer />
-        </Providers>
-      </body>
-    </html>
+    <>
+      <Navbar />
+      {children}
+    </>
   );
 }

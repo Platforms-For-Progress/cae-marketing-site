@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 import { Providers } from "./providers";
+import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
 
 export const metadata = {
   title: "Career Advancement Exchange",
@@ -18,7 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

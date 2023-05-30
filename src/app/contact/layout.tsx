@@ -12,18 +12,15 @@ export const metadata = {
   description: "Contact Us",
 };
 
-export default function RootLayout({
+export default function ContactLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        <Providers>{children}</Providers>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Navbar />
+      {children}
+    </>
   );
 }
