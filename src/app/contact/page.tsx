@@ -21,7 +21,13 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from "react-icons/bs";
+import {
+  BsGithub,
+  BsInstagram,
+  BsLinkedin,
+  BsPerson,
+  BsTwitter,
+} from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
 
 export default function ContactFormWithSocialButtons() {
@@ -82,13 +88,13 @@ export default function ContactFormWithSocialButtons() {
                   />
                 </Tooltip>
 
-                <Link href="https://github.com/Platforms-For-Progress">
+                <Link href="https://instagram.com/caexchange">
                   <IconButton
-                    aria-label="github"
+                    aria-label="instagram"
                     variant="ghost"
                     size="lg"
                     fontSize="3xl"
-                    icon={<BsGithub />}
+                    icon={<BsInstagram />}
                     _hover={{
                       bg: "yellow.500",
                       color: useColorModeValue("white", "gray.700"),

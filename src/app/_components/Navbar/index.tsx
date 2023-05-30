@@ -281,11 +281,11 @@ const NAV_ITEMS = [
         subLabel: "Join our Slack community.",
         href: "https://join.slack.com/t/slack-gkx8909/shared_invite/zt-1wb4et1xt-Ti4CW4_LjTHoJ6Fi6DGP5Q",
       },
-      {
-        label: "Professional Social Network",
-        subLabel: "Our vision.",
-        href: "/solutions",
-      },
+      // {
+      //   label: "Professional Social Network",
+      //   subLabel: "Our vision.",
+      //   href: "/solutions",
+      // },
     ],
   },
   {

@@ -70,7 +70,7 @@ const Card = ({ heading, description, icon, href }: any) => {
             Learn more
           </Button>
         ) : (
-          <Text colorScheme={"gray"} size={"sm"}>
+          <Text color={useColorModeValue("gray", "gray.400")} size={"sm"}>
             Coming Soon
           </Text>
         )}
