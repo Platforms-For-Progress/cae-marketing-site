@@ -11,6 +11,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
 import { ReactElement } from "react";
 import {
   FcAbout,
@@ -59,13 +60,19 @@ const Card = ({ heading, description, icon, href }: any) => {
           </Text>
         </Box>
         {href != "#" ? (
-          <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
+          <Button
+            as={Link}
+            href={href}
+            variant={"link"}
+            colorScheme={"blue"}
+            size={"sm"}
+          >
             Learn more
           </Button>
         ) : (
-          <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
+          <Text colorScheme={"gray"} size={"sm"}>
             Coming Soon
-          </Button>
+          </Text>
         )}
       </Stack>
     </Box>
@@ -109,7 +116,7 @@ export default function Solutions() {
             description={
               "Request service for personalized websites targeted at underrepresented students and professionals"
             }
-            href={"caeportfolio.com"}
+            href={"https://caeportfolio.com"}
           />
           <Card
             heading={"Career Advancement Portfolio Education"}
@@ -117,7 +124,7 @@ export default function Solutions() {
             description={
               "Summer learning experience targeted at leaders passionate about community-building and equity."
             }
-            href={"caeportfolio.com/resources/cape"}
+            href={"https://caeportfolio.com/resources/cape"}
           />
           <Card
             heading={"Career Advancement Community"}
