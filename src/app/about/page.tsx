@@ -48,12 +48,12 @@ const data = [
   },
   {
     title: "Jacob Shalabi",
-    description: "Head of Software",
+    description: "CTO",
     image: "/images/jacobshalabi.jpeg",
   },
   {
     title: "Laiba Khan",
-    description: "Head of CAPE",
+    description: "CHRO",
     image: "/images/laiba.jpeg",
   },
   {
@@ -71,6 +71,11 @@ const data = [
     title: "Ritul Soni",
     description: "Head of R & D",
     image: "/images/ritul.jpg",
+  },
+  {
+    title: "Alexis Serrano",
+    description: "Head of CAPE",
+    image: "/images/alexis.jpeg",
   },
   {
     title: "Kaz Shah",
@@ -92,11 +97,7 @@ const data = [
     description: "Software Developer",
     image: "/images/Aayush.jpg",
   },
-  {
-    title: "Alexis Serrano",
-    description: "Software Developer",
-    image: "/images/alexis.jpeg",
-  },
+  
   {
     title: "Ardyn Chin",
     description: "UIUX Intern",
