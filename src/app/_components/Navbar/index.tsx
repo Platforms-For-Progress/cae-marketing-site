@@ -9,22 +9,23 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Image as ChakraImage,
 } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/next-js";
+import { Image as NextImage } from "@chakra-ui/next-js";
+import { Link } from "@chakra-ui/next-js";
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import logo from "../../../../public/logo-line.png";
+
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
@@ -33,7 +34,7 @@ export default function Navbar() {
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
+        // minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
@@ -56,14 +57,26 @@ export default function Navbar() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-            onClick={() => (window.location.href = "/")}
-          >
-            <Image src={logo} alt="logo" maxH={"45px"} />
-          </Text>
+          <Box cursor="pointer">
+            <Link href="/">
+              {/* <NextImage
+                src="/logo-line.png"
+                alt="logo"
+                width="120"
+                height="60"
+                style={{ objectFit: "contain" }}
+                // boxSize={{ base: "100px", md: "150px", lg: "200px" }}
+              /> */}
+              <ChakraImage
+                src="/logo-line.png"
+                alt="logo"
+                width="120"
+                height="60"
+                style={{ objectFit: "contain" }}
+                boxSize={{ base: "50px", md: "100px", lg: "150px" }}
+              />
+            </Link>
+          </Box>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
