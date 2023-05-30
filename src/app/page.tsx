@@ -20,20 +20,7 @@ export default function Home() {
         <Flex p={8} flex={1} align={"center"} justify={"center"}>
           <Stack spacing={6} w={"full"} maxW={"lg"}>
             <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
-              <Text
-                as={"span"}
-                position={"relative"}
-                // _after={{
-                //   content: "''",
-                //   width: "full",
-                //   height: useBreakpointValue({ base: "20%", md: "30%" }),
-                //   position: "absolute",
-                //   bottom: 1,
-                //   left: 0,
-                //   bg: "yellow.400",
-                //   zIndex: -1,
-                // }}
-              >
+              <Text as={"span"} position={"relative"}>
                 Empowering
               </Text>
               <Text
@@ -58,27 +45,19 @@ export default function Home() {
               alignItems="center"
             >
               <Link
-                // href="/solutions"
-                // rounded={"full"}
-                // fontSize={{ base: "md", lg: "lg" }}
-                // bg={"yellow.400"}
-                // color={"white"}
-                // _hover={{
-                //   bg: "yellow.500",
-                // }}
                 href="/solutions"
-                px={6} // add padding on x-axis
-                py={3} // add padding on y-axis
+                px={6}
+                py={3}
                 rounded={"full"}
-                fontSize={{ base: "lg", lg: "xl" }} // increased font size
+                fontSize={{ base: "lg", lg: "xl" }}
                 bg={"yellow.400"}
                 color={"white"}
                 _hover={{
                   bg: "yellow.500",
-                  transform: "scale(1.02)", // subtle grow effect
+                  transform: "scale(1.02)",
                 }}
-                transition="all 0.3s" // smooth transition
-                boxShadow="lg" // subtle shadow for depth
+                transition="all 0.3s"
+                boxShadow="lg"
               >
                 View our solutions
               </Link>
@@ -93,6 +72,7 @@ export default function Home() {
             alt={"Login Image"}
             style={{ objectFit: "cover" }}
             src={heroImage}
+            priority
           />
         </Flex>
       </Stack>
