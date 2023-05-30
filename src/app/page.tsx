@@ -9,9 +9,8 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import Image from "next/image";
 import { Link } from "@chakra-ui/next-js";
-
+import Image from "next/image";
 import heroImage from "../../public/images/hero.jpeg";
 
 export default function Home() {
@@ -53,20 +52,38 @@ export default function Home() {
               Career Advancement Exchange is revolutionizing the workforce and
               reducing the inequities that exist within the hiring process.
             </Text>
-            <Stack direction={{ base: "column", md: "row" }} spacing={4}>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              spacing={4}
+              alignItems="center"
+            >
               <Link
+                // href="/solutions"
+                // rounded={"full"}
+                // fontSize={{ base: "md", lg: "lg" }}
+                // bg={"yellow.400"}
+                // color={"white"}
+                // _hover={{
+                //   bg: "yellow.500",
+                // }}
                 href="/solutions"
+                px={6} // add padding on x-axis
+                py={3} // add padding on y-axis
                 rounded={"full"}
+                fontSize={{ base: "lg", lg: "xl" }} // increased font size
                 bg={"yellow.400"}
                 color={"white"}
                 _hover={{
                   bg: "yellow.500",
+                  transform: "scale(1.02)", // subtle grow effect
                 }}
+                transition="all 0.3s" // smooth transition
+                boxShadow="lg" // subtle shadow for depth
               >
                 View our solutions
               </Link>
-              <Link href="/contact" rounded={"full"}>
-                Contact Us
+              <Link href="/about" rounded={"full"}>
+                Learn more <span aria-hidden="true">→</span>
               </Link>
             </Stack>
           </Stack>
