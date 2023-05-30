@@ -28,18 +28,21 @@ import {
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const bgColor = useColorModeValue("gray.50", "gray.900");
+  const textColor = useColorModeValue("gray.600", "white");
+  const borderColor = useColorModeValue("gray.200", "gray.900");
 
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("gray.50", "gray.900")}
-        color={useColorModeValue("gray.600", "white")}
+        bg={bgColor}
+        color={textColor}
         // minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
+        borderColor={borderColor}
         align={"center"}
         maxH={"10vh"}
       >
@@ -261,7 +264,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Our Solutions",
-    
+
     children: [
       {
         label: "ePortfolio Request Service",
