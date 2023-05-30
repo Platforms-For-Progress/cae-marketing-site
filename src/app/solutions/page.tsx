@@ -54,9 +54,16 @@ const Card = ({ heading, description, icon, href }: any) => {
             {description}
           </Text>
         </Box>
+        { (href != "#") ? (
+          
         <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
           Learn more
         </Button>
+        ): (
+          <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
+          Coming Soon
+        </Button>
+        )}
       </Stack>
     </Box>
   );
@@ -93,7 +100,7 @@ export default function gridListWith() {
             description={
               "Request service for personalized websites targeted at underrepresented students and professionals"
             }
-            href={"#"}
+            href={"caeportfolio.com"}
           />
           <Card
             heading={"Career Advancement Portfolio Education"}
@@ -101,7 +108,7 @@ export default function gridListWith() {
             description={
               "Summer learning experience targeted at leaders passionate about community-building and equity."
             }
-            href={"#"}
+            href={"caeportfolio.com/resources/cape"}
           />
           <Card
             heading={"Career Advancement Community"}
@@ -109,13 +116,13 @@ export default function gridListWith() {
             description={
               "Slack community built up from underrepresented populations at UIUC and adjacent communities."
             }
-            href={"#"}
+            href={"https://join.slack.com/t/slack-gkx8909/shared_invite/zt-1wb4et1xt-Ti4CW4_LjTHoJ6Fi6DGP5Q"}
           />
           <Card
             heading={"Professional Social Network"}
             icon={<Icon as={FcGraduationCap} w={10} h={10} />}
             description={
-              "Professional social networking web and mobile app for underrepresented persons."
+              "Professional social networking web and mobile app for underrepresented persons. " 
             }
             href={"#"}
           />

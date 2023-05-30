@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
+        bg={useColorModeValue('gray.50', 'gray.900')}
         color={useColorModeValue("gray.600", "white")}
         // minH={"60px"}
         py={{ base: 2 }}
@@ -41,6 +41,7 @@ export default function Navbar() {
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
+        maxH={'10vh'}
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -102,6 +103,7 @@ const DesktopNav = () => {
       spacing={4}
       justifyContent={"center"}
       alignItems={"center"}
+      
     >
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label} justifyContent={"center"}>
@@ -256,23 +258,7 @@ const MobileNavItem = ({ label, children, href }: any) => {
 const NAV_ITEMS = [
   {
     label: "About Us",
-    children: [
-      {
-        label: "Mission",
-        subLabel: "Why we are doing what we are doing.",
-        href: "#",
-      },
-      {
-        label: "Vision",
-        subLabel: "Where we are going.",
-        href: "#",
-      },
-      {
-        label: "Values",
-        subLabel: "What we stand for.",
-        href: "#",
-      },
-    ],
+    href: "/about",
   },
   {
     label: "Our Solutions",
@@ -280,22 +266,22 @@ const NAV_ITEMS = [
       {
         label: "ePortfolio Request Service",
         subLabel: "Request an ePortfolio using our services.",
-        href: "#",
+        href: "caeportfolio.com",
       },
       {
         label: "Career Advancement Portfolio Education",
         subLabel: "Summer Learning Experience.",
-        href: "#",
+        href: "caeportfolio.com/resources/cape",
       },
       {
         label: "Slack Community",
         subLabel: "Join our Slack community.",
-        href: "#",
+        href: "https://join.slack.com/t/slack-gkx8909/shared_invite/zt-1wb4et1xt-Ti4CW4_LjTHoJ6Fi6DGP5Q",
       },
       {
         label: "Professional Social Network",
         subLabel: "Our vision.",
-        href: "#",
+        href: "/solutions",
       },
     ],
   },
