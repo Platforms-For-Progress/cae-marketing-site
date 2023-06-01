@@ -16,6 +16,7 @@ import {
   useBreakpointValue,
   useDisclosure,
   Image as ChakraImage,
+  useColorMode,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { Link } from "@chakra-ui/next-js";
@@ -24,10 +25,13 @@ import {
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  MoonIcon,
+  SunIcon,
 } from "@chakra-ui/icons";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = useColorModeValue("gray.50", "gray.900");
   const textColor = useColorModeValue("gray.600", "white");
   const borderColor = useColorModeValue("gray.200", "gray.900");
@@ -37,7 +41,6 @@ export default function Navbar() {
       <Flex
         bg={bgColor}
         color={textColor}
-        // minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
@@ -66,8 +69,8 @@ export default function Navbar() {
               <Image
                 src={useColorModeValue("/logo-black.svg", "/logo-white.svg")}
                 alt="logo"
-                width="120"
-                height="60"
+                width="110"
+                height="55"
                 style={{ objectFit: "contain" }}
                 // boxSize={{ base: "100px", md: "150px", lg: "200px" }}
               />
@@ -84,6 +87,10 @@ export default function Navbar() {
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
+
+            <Button onClick={toggleColorMode} alignSelf={"center"} ml={5}>
+              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            </Button>
           </Flex>
         </Flex>
       </Flex>

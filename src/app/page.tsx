@@ -13,6 +13,7 @@ import {
 import { Link } from "@chakra-ui/next-js";
 import Image from "next/image";
 import heroImage from "../../public/images/hero.jpeg";
+import Navbar from "./_components/Navbar";
 
 export default function Home() {
   return (

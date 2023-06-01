@@ -29,11 +29,42 @@ import {
   BsTwitter,
 } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import ErrorAlert from "../_components/Alerts/ErrorAlert";
+import SuccessAlert from "../_components/Alerts/SuccessAlert";
 
-export default function ContactFormWithSocialButtons() {
+const FORM_ERROR_MESSAGE = "There was an error submitting your message";
+const FORM_SUCCESS_MESSAGE = "Your message has been submitted!";
+
+export default function ContactFormPage() {
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [formLoading, setFormLoading] = React.useState(false);
+  const [formError, setFormError] = React.useState(false);
+  const [formSuccess, setFormSuccess] = React.useState(false);
   const { hasCopied, onCopy } = useClipboard(
     "team@careeradvancementexchange.com"
   );
+
+  async function handleSubmitMessage(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setFormError(false);
+    setFormLoading(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify({ name, email, message }),
+      });
+      setName("");
+      setEmail("");
+      setMessage("");
+      setFormSuccess(true);
+    } catch (error) {
+      setFormSuccess(false);
+      setFormError(true);
+    }
+    setFormLoading(false);
+  }
 
   return (
     <Flex
@@ -139,54 +170,69 @@ export default function ContactFormWithSocialButtons() {
                 color={useColorModeValue("gray.700", "whiteAlpha.900")}
                 shadow="base"
               >
-                <VStack spacing={5}>
-                  <FormControl isRequired>
-                    <FormLabel>Name</FormLabel>
+                <form onSubmit={handleSubmitMessage}>
+                  <VStack spacing={5}>
+                    <FormControl isRequired>
+                      <FormLabel>Name</FormLabel>
+                      <InputGroup>
+                        <InputLeftElement children={<BsPerson />} />
+                        <Input
+                          type="text"
+                          name="name"
+                          placeholder="Your Name"
+                          onChange={(e) => setName(e.target.value)}
+                          value={name}
+                        />
+                      </InputGroup>
+                    </FormControl>
 
-                    <InputGroup>
-                      <InputLeftElement children={<BsPerson />} />
-                      <Input type="text" name="name" placeholder="Your Name" />
-                    </InputGroup>
-                  </FormControl>
+                    <FormControl isRequired>
+                      <FormLabel>Email</FormLabel>
+                      <InputGroup>
+                        <InputLeftElement children={<MdOutlineEmail />} />
+                        <Input
+                          type="email"
+                          name="email"
+                          placeholder="Your Email"
+                          onChange={(e) => setEmail(e.target.value)}
+                          value={email}
+                        />
+                      </InputGroup>
+                    </FormControl>
 
-                  <FormControl isRequired>
-                    <FormLabel>Email</FormLabel>
+                    <FormControl isRequired>
+                      <FormLabel>Message</FormLabel>
 
-                    <InputGroup>
-                      <InputLeftElement children={<MdOutlineEmail />} />
-                      <Input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
+                      <Textarea
+                        name="message"
+                        placeholder="Your Message"
+                        rows={6}
+                        resize="none"
+                        onChange={(e) => setMessage(e.target.value)}
+                        value={message}
                       />
-                    </InputGroup>
-                  </FormControl>
+                    </FormControl>
 
-                  <FormControl isRequired>
-                    <FormLabel>Message</FormLabel>
-
-                    <Textarea
-                      name="message"
-                      placeholder="Your Message"
-                      rows={6}
-                      resize="none"
-                    />
-                  </FormControl>
-
-                  <Button
-                    colorScheme="yellow"
-                    bg="yellow.400"
-                    color="white"
-                    _hover={{
-                      bg: "yellow.500",
-                    }}
-                    width={"full"}
-                  >
-                    Send Message
-                  </Button>
-                </VStack>
+                    <Button
+                      colorScheme="yellow"
+                      bg="yellow.400"
+                      color="white"
+                      _hover={{
+                        bg: "yellow.500",
+                      }}
+                      width={"full"}
+                      type="submit"
+                      isLoading={formLoading}
+                      loadingText="Submitting"
+                    >
+                      Send Message
+                    </Button>
+                  </VStack>
+                </form>
               </Box>
             </Stack>
+            {formError && <ErrorAlert message={FORM_ERROR_MESSAGE} />}
+            {formSuccess && <SuccessAlert message={FORM_SUCCESS_MESSAGE} />}
           </VStack>
         </Box>
       </Box>

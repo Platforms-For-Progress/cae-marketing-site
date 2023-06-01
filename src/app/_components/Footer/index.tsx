@@ -12,10 +12,16 @@ import {
   IconButton,
   useColorModeValue,
   useBreakpointValue,
+  FormControl,
+  FormLabel,
+  FormHelperText,
+  useToast,
+  InputGroup,
+  InputRightElement,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import Image from "next/image";
-import { ReactNode } from "react";
+import React from "react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { BiMailSend } from "react-icons/bi";
 
@@ -24,7 +30,7 @@ const SocialButton = ({
   label,
   href,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
   label: string;
   href: string;
 }) => {
@@ -51,7 +57,7 @@ const SocialButton = ({
   );
 };
 
-const ListHeader = ({ children }: { children: ReactNode }) => {
+const ListHeader = ({ children }: { children: React.ReactNode }) => {
   return (
     <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
       {children}
@@ -60,6 +66,38 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 export default function Footer() {
+  const toast = useToast();
+  const [email, setEmail] = React.useState("");
+  const [submitting, setSubmitting] = React.useState(false);
+
+  async function handleNewsletterSubscribe(
+    event: React.FormEvent<HTMLFormElement>
+  ) {
+    event.preventDefault();
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        body: JSON.stringify({ email }),
+      });
+      setEmail("");
+      toast({
+        title: "Success!",
+        description: "Be on the lookout for our latest updates!",
+        status: "success",
+        duration: 5000,
+      });
+    } catch (error) {
+      toast({
+        title: "Error occurred",
+        description: "There was an error processing your email.",
+        status: "error",
+        duration: 5000,
+      });
+    }
+    setSubmitting(false);
+  }
+
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
@@ -93,26 +131,36 @@ export default function Footer() {
             <Link href={"/contact"}>Contact us</Link>
           </Stack>
           <Stack align={"flex-start"}>
-            <ListHeader>Stay up to date</ListHeader>
-            <Stack direction={"row"}>
-              <Input
-                placeholder={"Your email address"}
-                bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
-                border={0}
-                _focus={{
-                  bg: "whiteAlpha.300",
-                }}
-              />
-              <IconButton
-                bg={useColorModeValue("green.400", "green.800")}
-                color={useColorModeValue("white", "gray.800")}
-                _hover={{
-                  bg: "green.600",
-                }}
-                aria-label="Subscribe"
-                icon={<BiMailSend />}
-              />
-            </Stack>
+            <form onSubmit={handleNewsletterSubscribe}>
+              <ListHeader>Stay up to date</ListHeader>
+              <Stack direction={"row"}>
+                <FormControl id="email" isRequired>
+                  <FormLabel display={"none"}>Email</FormLabel>
+                  <Input
+                    placeholder={"Your email address"}
+                    bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+                    border={0}
+                    _focus={{
+                      bg: "whiteAlpha.300",
+                    }}
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    isDisabled={submitting}
+                  />
+                </FormControl>
+                <IconButton
+                  bg={useColorModeValue("green.400", "green.800")}
+                  color={useColorModeValue("white", "gray.800")}
+                  _hover={{
+                    bg: "green.600",
+                  }}
+                  aria-label="Subscribe"
+                  icon={<BiMailSend />}
+                  isLoading={submitting}
+                  type="submit"
+                />
+              </Stack>
+            </form>
           </Stack>
         </SimpleGrid>
       </Container>
