@@ -164,6 +164,7 @@ export default function ContactFormPage() {
               </Stack>
 
               <Box
+                w={{ base: "100%", md: "50vw" }}
                 bg={useColorModeValue("white", "gray.700")}
                 borderRadius="lg"
                 p={8}
