@@ -1,4 +1,5 @@
 "use client";
+
 import {
   VStack,
   Button,
@@ -24,22 +25,7 @@ import {
   StatNumber,
   useColorModeValue,
 } from "@chakra-ui/react";
-import {} from "@chakra-ui/react";
-import Elisa from "next/image";
-import Jacob from "next/image";
-import Laiba from "next/image";
-import Maryam from "next/image";
-import Sid from "next/image";
-import Ritul from "next/image";
-import Kaz from "next/image";
-import Yasmine from "next/image";
-import Ardyn from "next/image";
-import Edith from "next/image";
-import Nora from "next/image";
-import Aayush from "next/image";
-import Alexis from "next/image";
-import Anay from "next/image";
-import Noah from "next/image";
+
 const data = [
   {
     title: "Elisa Carrillo",
@@ -66,7 +52,7 @@ const data = [
     description: "Head of Business",
     image: "/images/anay.jpeg",
   },
-  
+
   {
     title: "Ritul Soni",
     description: "Head of R & D",
@@ -97,7 +83,7 @@ const data = [
     description: "Software Developer",
     image: "/images/Aayush.jpg",
   },
-  
+
   {
     title: "Ardyn Chin",
     description: "UIUX Intern",
@@ -168,6 +154,7 @@ export default function gridListWithCTA() {
           md: "repeat(2, 1fr)",
         }}
         gap={4}
+        color={useColorModeValue("gray.700", "gray.200")}
       >
         <GridItem colSpan={1}>
           <VStack alignItems="flex-start" spacing="20px">
@@ -198,6 +185,7 @@ export default function gridListWithCTA() {
           md: "repeat(2, 1fr)",
         }}
         gap={4}
+        color={useColorModeValue("gray.700", "gray.200")}
       >
         <GridItem colSpan={1}>
           <VStack alignItems="flex-start" spacing="20px">
@@ -225,6 +213,7 @@ export default function gridListWithCTA() {
           md: "repeat(2, 1fr)",
         }}
         gap={4}
+        color={useColorModeValue("gray.700", "gray.200")}
       >
         <GridItem colSpan={1}>
           <VStack alignItems="flex-start" spacing="20px">
@@ -251,10 +240,15 @@ export default function gridListWithCTA() {
         fontSize={"4xl"}
         py={10}
         fontWeight={"bold"}
+        color={useColorModeValue("gray.700", "gray.200")}
       >
         Our Progress
       </chakra.h1>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
+      <SimpleGrid
+        columns={{ base: 1, md: 3 }}
+        spacing={{ base: 5, lg: 8 }}
+        color={useColorModeValue("gray.700", "gray.200")}
+      >
         <StatsCard title={"We Have"} stat={"7 website deployments"} />
         <StatsCard title={"In"} stat={"2 different states"} />
         <StatsCard title={"With Over"} stat={"8000 website views"} />
@@ -266,6 +260,7 @@ export default function gridListWithCTA() {
           fontSize={"4xl"}
           py={10}
           fontWeight={"bold"}
+          color={useColorModeValue("gray.700", "gray.200")}
         >
           Our Team
         </chakra.h1>
@@ -275,7 +270,6 @@ export default function gridListWithCTA() {
           align="center"
           justify="center"
           flexWrap={"wrap"}
-          
         >
           {data.map((item) => (
             <Box
