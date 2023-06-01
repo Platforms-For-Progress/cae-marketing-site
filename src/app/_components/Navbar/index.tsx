@@ -271,7 +271,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Our Solutions",
-
+    href: "/solutions",
     children: [
       {
         label: "ePortfolio Request Service",
