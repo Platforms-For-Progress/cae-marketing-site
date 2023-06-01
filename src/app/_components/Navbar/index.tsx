@@ -29,6 +29,8 @@ import {
   SunIcon,
 } from "@chakra-ui/icons";
 
+import { NAV_ITEMS } from "./navItems";
+
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
@@ -263,40 +265,3 @@ const MobileNavItem = ({ label, children, href }: any) => {
     </Stack>
   );
 };
-
-const NAV_ITEMS = [
-  {
-    label: "About Us",
-    href: "/about",
-  },
-  {
-    label: "Our Solutions",
-    href: "/solutions",
-    children: [
-      {
-        label: "ePortfolio Request Service",
-        subLabel: "Request an ePortfolio using our services.",
-        href: "https://caeportfolio.com",
-      },
-      {
-        label: "Career Advancement Portfolio Education",
-        subLabel: "Summer Learning Experience.",
-        href: "https://caeportfolio.com/resources/cape",
-      },
-      {
-        label: "Slack Community",
-        subLabel: "Join our Slack community.",
-        href: "https://join.slack.com/t/slack-gkx8909/shared_invite/zt-1wb4et1xt-Ti4CW4_LjTHoJ6Fi6DGP5Q",
-      },
-      // {
-      //   label: "Professional Social Network",
-      //   subLabel: "Our vision.",
-      //   href: "/solutions",
-      // },
-    ],
-  },
-  {
-    label: "Contact Us",
-    href: "/contact",
-  },
-];
