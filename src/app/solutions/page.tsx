@@ -130,11 +130,9 @@ export default function Solutions() {
             heading={"Career Advancement Community"}
             icon={<Icon as={FcConferenceCall} w={10} h={10} />}
             description={
-              "Slack community built up from underrepresented populations at UIUC and adjacent communities."
+              "Discord community serving resources for succeeding in the workplace from an underrepresented background."
             }
-            href={
-              "https://join.slack.com/t/slack-gkx8909/shared_invite/zt-1wb4et1xt-Ti4CW4_LjTHoJ6Fi6DGP5Q"
-            }
+            href={"https://discord.gg/B9djunUm"}
           />
           <Card
             heading={"Professional Social Network"}

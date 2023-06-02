@@ -25,9 +25,9 @@ export const NAV_ITEMS: NavItem[] = [
         href: "https://caeportfolio.com/resources/cape",
       },
       {
-        label: "Slack Community",
-        subLabel: "Join our Slack community.",
-        href: "https://join.slack.com/t/slack-gkx8909/shared_invite/zt-1wb4et1xt-Ti4CW4_LjTHoJ6Fi6DGP5Q",
+        label: "Discord Community",
+        subLabel: "Join our Discord community.",
+        href: "https://discord.gg/B9djunUm",
       },
     ],
   },
