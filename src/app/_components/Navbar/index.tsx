@@ -37,6 +37,7 @@ export default function Navbar() {
   const bgColor = useColorModeValue("gray.50", "gray.900");
   const textColor = useColorModeValue("gray.600", "white");
   const borderColor = useColorModeValue("gray.200", "gray.900");
+  const logoSrc = useColorModeValue("/logo-black.svg", "/logo-white.svg");
 
   return (
     <Box>
@@ -69,7 +70,7 @@ export default function Navbar() {
           <Box cursor="pointer">
             <Link href="/">
               <Image
-                src={useColorModeValue("/logo-black.svg", "/logo-white.svg")}
+                src={logoSrc}
                 alt="logo"
                 width="110"
                 height="55"
@@ -107,6 +108,7 @@ export default function Navbar() {
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
+  const linkFocusColor = useColorModeValue("gray.100", "gray.900");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
@@ -132,7 +134,7 @@ const DesktopNav = () => {
                 }}
                 justifyContent={"center"}
                 _focus={{
-                  bg: useColorModeValue("gray.100", "gray.900"),
+                  bg: linkFocusColor,
                 }}
               >
                 {navItem.label}
