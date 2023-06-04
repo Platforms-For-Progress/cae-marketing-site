@@ -19,7 +19,9 @@ import { Link } from "@chakra-ui/next-js";
 import { IconType } from "react-icons";
 import { CtaButtonProps, CtaButton } from "./CtaButton";
 
-const SolutionBox = ({}) => {};
+const SolutionBox = ({}) => {
+  return <></>;
+};
 
 const SolutionIcon = ({ icon }: { icon: IconType }) => {
   return (
