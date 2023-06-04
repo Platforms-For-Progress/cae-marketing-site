@@ -273,6 +273,7 @@ export default function gridListWithCTA() {
         >
           {data.map((item) => (
             <Box
+              key={item.title}
               maxW={"270px"}
               w={"full"}
               bg={

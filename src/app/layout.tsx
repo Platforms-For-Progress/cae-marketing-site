@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 import { Providers } from "./providers";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 import WoopraScript from "@/woopra";
 
 export const metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Footer />
         </Providers>
         <WoopraScript />
+        <Analytics />
       </body>
     </html>
   );

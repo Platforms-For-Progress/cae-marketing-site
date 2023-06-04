@@ -11,13 +11,9 @@ import {
   Input,
   IconButton,
   useColorModeValue,
-  useBreakpointValue,
   FormControl,
   FormLabel,
-  FormHelperText,
   useToast,
-  InputGroup,
-  InputRightElement,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import Image from "next/image";
