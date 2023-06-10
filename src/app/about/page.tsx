@@ -13,9 +13,9 @@ import {
   Stack,
   Heading,
   SimpleGridProps,
-  Image,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/next-js";
 import {
   Box,
   chakra,
@@ -286,13 +286,14 @@ export default function gridListWithCTA() {
               mb={5}
             >
               <Image
-                h={"120px"}
-                w={"120px"}
+                width="120"
+                height="120"
                 borderRadius={"50%"}
                 margin={"auto"}
                 mt={"20px"}
                 src={item.image}
-                objectFit={"cover"}
+                alt={item.title}
+                style={{ objectFit: "cover" }}
               />
 
               <Box p={6}>
