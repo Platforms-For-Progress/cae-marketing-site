@@ -95,28 +95,28 @@ const data = [
   {
     title: "Aayush Bhat",
     description: "Software Developer",
-    image: "/images/Aayush.jpg",
+    image: "/images/aayush.jpg",
   },
   
   {
     title: "Ardyn Chin",
     description: "UIUX Intern",
-    image: "/images/Ardyn.jpg",
+    image: "/images/ardyn.jpg",
   },
   {
     title: "Noah Taliercio",
     description: "Software Development Intern",
-    image: "/images/Noah.jpeg",
+    image: "/images/noah.jpeg",
   },
   {
     title: "Edith Luna",
     description: "Marketing Intern",
-    image: "/images/Edith.jpeg",
+    image: "/images/edith.jpeg",
   },
   {
     title: "Nora Duffy",
     description: "Marketing Intern",
-    image: "/images/Nora.jpeg",
+    image: "/images/nora.jpeg",
   },
 
   // 'https://images.unsplash.com/photo-1612852098516-55d01c75769a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
