@@ -31,7 +31,7 @@ import { solutionsData } from "./solutionsData";
 
 export default function Solutions() {
   return (
-    <Box p={4}>
+    <Box p={130}>
       <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
         <Heading
           color={"yellow.300"}

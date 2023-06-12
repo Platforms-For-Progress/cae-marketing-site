@@ -70,7 +70,7 @@ const data = [
   },
   {
     title: "Sid Wanjara",
-    description: "Software Developer",
+    description: "Software/R&D/Business",
     image: "/images/sid.jpeg",
   },
   {
@@ -146,7 +146,7 @@ const Feature = ({ heading, text }: FeatureProps) => {
 
 export default function gridListWithCTA() {
   return (
-    <Box as={Container} maxW="7xl" mt={14} p={4}>
+    <Box as={Container} maxW="7xl" mt={14} p={100}>
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",

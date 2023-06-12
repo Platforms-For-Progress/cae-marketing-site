@@ -40,7 +40,13 @@ export default function Navbar() {
   const logoSrc = useColorModeValue("/logo-black.svg", "/logo-white.svg");
 
   return (
-    <Box>
+    <Box
+    as="header" position="fixed" backgroundColor="rgba(255, 
+      255, 255, 0.8)" backdropFilter="saturate(180%) blur(5px)" 
+      w="100%" zIndex={200}
+
+    >
+      
       <Flex
         bg={bgColor}
         color={textColor}
