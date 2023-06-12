@@ -72,6 +72,7 @@ export default function ContactFormPage() {
       align="center"
       justify="center"
       id="contact"
+      p={10}
     >
       <Box
         borderRadius="lg"
