@@ -15,7 +15,8 @@ import {
   SimpleGridProps,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/next-js";
+import { Image as ChakraNextImage } from "@chakra-ui/next-js";
+import NextImage from "next/image";
 import {
   Box,
   chakra,
@@ -26,89 +27,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-const data = [
-  {
-    title: "Elisa Carrillo",
-    description: "Founder and CEO",
-    image: "/images/ElisaCarrillo.png",
-  },
-  {
-    title: "Jacob Shalabi",
-    description: "CTO",
-    image: "/images/jacobshalabi.jpeg",
-  },
-  {
-    title: "Laiba Khan",
-    description: "CHRO",
-    image: "/images/laiba.jpeg",
-  },
-  {
-    title: "Maryam Khatoon",
-    description: "Head of Marketing",
-    image: "/images/Maryam.jpeg",
-  },
-  {
-    title: "Anay Sharma",
-    description: "Head of Business",
-    image: "/images/anay.jpeg",
-  },
-
-  {
-    title: "Ritul Soni",
-    description: "Head of R & D",
-    image: "/images/ritul.jpg",
-  },
-  {
-    title: "Alexis Serrano",
-    description: "Head of CAPE",
-    image: "/images/alexis.jpeg",
-  },
-  {
-    title: "Kaz Shah",
-    description: "Head of URW",
-    image: "/images/kaz.jpg",
-  },
-  {
-    title: "Sid Wanjara",
-    description: "Software/R&D/Business",
-    image: "/images/sid.jpeg",
-  },
-  {
-    title: "Yasmine Munoz",
-    description: "Software Developer",
-    image: "/images/yasmine.jpeg",
-  },
-  {
-    title: "Aayush Bhat",
-    description: "Software Developer",
-    image: "/images/Aayush.jpg",
-  },
-
-  {
-    title: "Ardyn Chin",
-    description: "UIUX Intern",
-    image: "/images/Ardyn.jpg",
-  },
-  {
-    title: "Noah Taliercio",
-    description: "Software Development Intern",
-    image: "/images/Noah.jpeg",
-  },
-  {
-    title: "Edith Luna",
-    description: "Marketing Intern",
-    image: "/images/Edith.jpeg",
-  },
-  {
-    title: "Nora Duffy",
-    description: "Marketing Intern",
-    image: "/images/Nora.jpeg",
-  },
-
-  // 'https://images.unsplash.com/photo-1612852098516-55d01c75769a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
-  // 'https://images.unsplash.com/photo-1627875764093-315831ac12f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
-  // 'https://images.unsplash.com/photo-1571432248690-7fd6980a1ae2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
-];
+import { team } from "./team";
+import TeamMemberCard from "./components/TeamMemberCard";
 interface FeatureProps {
   heading: string;
   text: string;
@@ -271,44 +191,8 @@ export default function gridListWithCTA() {
           justify="center"
           flexWrap={"wrap"}
         >
-          {data.map((item) => (
-            <Box
-              key={item.title}
-              maxW={"270px"}
-              w={"full"}
-              bg={
-                "linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%)"
-              }
-              boxShadow={"2xl"}
-              rounded={"md"}
-              overflow={"hidden"}
-              margin={"auto"}
-              mb={5}
-            >
-              <Image
-                width="120"
-                height="120"
-                borderRadius={"50%"}
-                margin={"auto"}
-                mt={"20px"}
-                src={item.image}
-                alt={item.title}
-                style={{ objectFit: "cover" }}
-              />
-
-              <Box p={6}>
-                <Stack spacing={0} align={"center"} mb={5}>
-                  <Heading
-                    fontSize={"2xl"}
-                    fontWeight={500}
-                    fontFamily={"body"}
-                  >
-                    {item.title}
-                  </Heading>
-                  <Text color={"gray.500"}>{item.description}</Text>
-                </Stack>
-              </Box>
-            </Box>
+          {team.map((member, index) => (
+            <TeamMemberCard key={index} member={member} />
           ))}
         </Flex>
       </Box>
